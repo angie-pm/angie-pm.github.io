@@ -27,7 +27,7 @@
   /* Nav */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(10,25,47,0.85);
+    background:var(--accent);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
     padding:18px 8%;
@@ -37,7 +37,7 @@
   }
   nav.scrolled{box-shadow:0 10px 30px -10px rgba(2,12,27,0.7);padding:14px 8%}
   .logo{
-    font-weight:700;font-size:1.25rem;color:var(--accent);
+    font-weight:700;font-size:1.25rem;color:var(--white);
     display:flex;align-items:center;gap:8px;
   }
   .logo span{color:var(--white)}
@@ -47,7 +47,7 @@
     position:relative;padding:6px 0;
   }
   .nav-links a .num{color:var(--accent);font-size:.8rem;margin-right:6px;font-weight:600}
-  .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+  .nav-links a:hover,.nav-links a.active{color:var(--white)}
   .nav-links a::after{
     content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
     background:var(--accent);transition:var(--transition);
@@ -77,9 +77,9 @@
   }
   .hero-badge{
     display:inline-flex;align-items:center;gap:8px;
-    background:rgba(100,255,218,0.1);color:var(--accent);
+    background:var(--bg-lighter);color:var(--accent);
     padding:8px 16px;border-radius:50px;font-size:.85rem;font-weight:500;
-    border:1px solid rgba(100,255,218,0.3);width:fit-content;margin-bottom:24px;
+    border:1px solid var(--bg-lighter);width:fit-content;margin-bottom:24px;
   }
   .hero-badge .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
@@ -122,11 +122,11 @@
     background:linear-gradient(135deg,var(--bg-light),var(--bg-lighter));
     display:flex;align-items:center;justify-content:center;
     border:2px solid var(--accent);position:relative;
-    box-shadow:0 0 60px -10px rgba(100,255,218,0.3);
+    box-shadow:0 0 60px -10px var(--text);
   }
   .avatar::before{
     content:'';position:absolute;inset:-12px;border-radius:50%;
-    border:1px dashed rgba(100,255,218,0.4);animation:spin 20s linear infinite;
+    border:1px dashed var(--text);animation:spin 20s linear infinite;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
   .avatar-initials{
@@ -152,7 +152,7 @@
   .card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:var(--shadow)}
   .card-icon{
     width:48px;height:48px;border-radius:10px;
-    background:rgba(100,255,218,0.1);color:var(--accent);
+    background:var(--bg-lighter);color:var(--accent);
     display:flex;align-items:center;justify-content:center;margin-bottom:18px;
   }
   .card h3{color:var(--accent);font-size:1.8rem;font-weight:700;margin-bottom:6px}
@@ -188,15 +188,15 @@
   .tl-company span{color:var(--accent)}
   .tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
   .tag{
-    background:rgba(100,255,218,0.08);color:var(--accent);
+    background:var(--bg-lighter);color:var(--accent);
     padding:4px 10px;border-radius:50px;font-size:.75rem;font-weight:500;
   }
   .tl-desc{color:var(--text-muted);font-size:.92rem;margin-bottom:14px}
   .tl-metric{
     display:inline-flex;align-items:center;gap:8px;
-    background:rgba(100,255,218,0.1);color:var(--accent);
+    background:var(--bg-lighter);color:var(--accent);
     padding:8px 14px;border-radius:8px;font-weight:600;font-size:.85rem;
-    border:1px solid rgba(100,255,218,0.3);
+    border:1px solid var(--bg-lighter);
   }
 
   /* Skills */
@@ -231,7 +231,7 @@
   .cert-card:hover{border-color:var(--accent);transform:translateY(-6px);box-shadow:var(--shadow)}
   .cert-medal{
     flex-shrink:0;width:60px;height:60px;border-radius:50%;
-    background:rgba(100,255,218,0.1);color:var(--accent);
+    background:var(--bg-lighter);color:var(--accent);
     display:flex;align-items:center;justify-content:center;
     border:2px solid var(--accent);
   }
