@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Vista previa de paletas</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,sans-serif}
+  body{background:#0a0a0a;padding:30px;color:#fff}
+  h1{text-align:center;margin-bottom:8px;font-size:1.8rem}
+  .intro{text-align:center;color:#999;margin-bottom:30px;font-size:.9rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:24px;max-width:1400px;margin:0 auto}
+  .card{border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .header{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-size:.85rem;font-weight:600;letter-spacing:.5px}
+  .swatches{display:flex;height:8px}
+  .swatches div{flex:1}
+  .mock{padding:24px}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:50px;font-size:.7rem;font-weight:500;margin-bottom:14px;border:1px solid}
+  .badge .dot{width:6px;height:6px;border-radius:50%}
+  .mock h2{font-size:1.4rem;font-weight:800;letter-spacing:-1px;margin-bottom:4px;line-height:1.1}
+  .mock h3{font-size:.95rem;font-weight:600;margin-bottom:12px;letter-spacing:-.5px}
+  .mock p{font-size:.8rem;margin-bottom:16px;line-height:1.5}
+  .ctas{display:flex;gap:10px;margin-bottom:18px}
+  .btn{padding:8px 16px;border-radius:6px;font-size:.75rem;font-weight:600;border:1px solid;cursor:pointer}
+  .panel{padding:14px;border-radius:8px;border:1px solid;display:flex;gap:10px;align-items:center}
+  .panel-ico{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
+  .panel-text strong{display:block;font-size:.85rem;margin-bottom:2px}
+  .panel-text span{font-size:.7rem}
+</style>
+</head>
+<body>
+<h1>10 Paletas para tu Portafolio</h1>
+<p class="intro">Cada tarjeta usa exactamente los tokens propuestos</p>
+<div class="grid" id="grid"></div>
+
+<script>
+const palettes = [
+  {name:"1. Navy Executive", bg:"#0F1B2D",bgLight:"#1A2942",bgLighter:"#243656",accent:"#D4AF37",text:"#D8E0EC",muted:"#8A95A8",white:"#F1F5FB"},
+  {name:"2. Charcoal & Champagne", bg:"#1A1A1A",bgLight:"#262626",bgLighter:"#363636",accent:"#C9A86A",text:"#E5E5E5",muted:"#9A9A9A",white:"#F5F5F5"},
+  {name:"3. Slate Professional", bg:"#1E293B",bgLight:"#293548",bgLighter:"#3A4A63",accent:"#38BDF8",text:"#CBD5E1",muted:"#94A3B8",white:"#F1F5F9"},
+  {name:"4. Deep Emerald", bg:"#0B1F1A",bgLight:"#13302A",bgLighter:"#1E443B",accent:"#10B981",text:"#D1E7DD",muted:"#8AA39B",white:"#ECFDF5"},
+  {name:"5. Burgundy & Cream", bg:"#2A1418",bgLight:"#3D1F24",bgLighter:"#5A2A31",accent:"#C9A961",text:"#E8DDD4",muted:"#A89A8E",white:"#F7F1E8"},
+  {name:"6. Light Minimal", bg:"#FAFBFC",bgLight:"#FFFFFF",bgLighter:"#F1F4F8",accent:"#2563EB",text:"#1E293B",muted:"#64748B",white:"#0F172A"},
+  {name:"7. Warm Beige", bg:"#F5F1EA",bgLight:"#FFFFFF",bgLighter:"#EAE3D5",accent:"#8B6F47",text:"#2C2519",muted:"#7A6F5E",white:"#1A150E"},
+  {name:"8. Midnight Plum", bg:"#1A1428",bgLight:"#251D3A",bgLighter:"#352B4F",accent:"#A78BFA",text:"#D5CFE3",muted:"#8E869F",white:"#EDE9F7"},
+  {name:"9. Forest & Gold", bg:"#1B2A20",bgLight:"#26392D",bgLighter:"#34503D",accent:"#E0B872",text:"#D4DDD6",muted:"#8B9890",white:"#EEF3EF"},
+  {name:"10. Graphite & Coral", bg:"#1F2125",bgLight:"#2B2E33",bgLighter:"#3D4148",accent:"#FF7F6B",text:"#D7DADE",muted:"#8E9298",white:"#F2F3F5"}
+];
+
+const grid = document.getElementById('grid');
+palettes.forEach(p => {
+  const accentBg = p.accent + '1A'; // 10% opacity
+  grid.innerHTML += `
+  <div class="card" style="background:${p.bg}">
+    <div class="header" style="background:${p.bgLight};color:${p.white}">
+      <span>${p.name}</span>
+      <span style="color:${p.accent};font-family:monospace;font-size:.75rem">${p.accent}</span>
+    </div>
+    <div class="swatches">
+      <div style="background:${p.bg}"></div>
+      <div style="background:${p.bgLight}"></div>
+      <div style="background:${p.bgLighter}"></div>
+      <div style="background:${p.accent}"></div>
+      <div style="background:${p.text}"></div>
+    </div>
+    <div class="mock">
+      <div class="badge" style="background:${accentBg};color:${p.accent};border-color:${p.accent}66">
+        <span class="dot" style="background:${p.accent}"></span>
+        Open to Work — Remote & Hybrid
+      </div>
+      <h2 style="color:${p.white}">Angie Rodríguez</h2>
+      <h3 style="color:${p.muted}">Asistente <span style="color:${p.accent}">Administrativa</span></h3>
+      <p style="color:${p.muted}">Profesional con experiencia en gestión administrativa, atención al cliente y soporte ejecutivo.</p>
+      <div class="ctas">
+        <button class="btn" style="background:${p.accent};color:${p.bg};border-color:${p.accent}">Contáctame</button>
+        <button class="btn" style="background:transparent;color:${p.accent};border-color:${p.accent}">Ver CV</button>
+      </div>
+      <div class="panel" style="background:${p.bgLight};border-color:${p.bgLighter}">
+        <div class="panel-ico" style="background:${accentBg};color:${p.accent}">5+</div>
+        <div class="panel-text">
+          <strong style="color:${p.white}">Años de experiencia</strong>
+          <span style="color:${p.muted}">Empresas del sector privado</span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+});
+</script>
+</body>
+</html>
