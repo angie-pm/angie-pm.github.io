@@ -1,11 +1,11 @@
   :root{
-    --bg:#0A192F;
-    --bg-light:#112240;
-    --bg-lighter:#1d2d50;
-    --accent:#64FFDA;
-    --text:#CCD6F6;
-    --text-muted:#8892B0;
-    --white:#E6F1FF;
+    --bg:#042E22;
+    --bg-light:#064E3B;
+    --bg-lighter:#0D7A5F;
+    --accent:#C9A84C;
+    --text:#F5F0E0;
+    --text-muted:#B8C5B5;
+    --white:#FFFFFF;
     --radius:12px;
     --shadow:0 10px 30px -15px rgba(2,12,27,0.7);
     --transition:all .25s cubic-bezier(0.645,0.045,0.355,1);
