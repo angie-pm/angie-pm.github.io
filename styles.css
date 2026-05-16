@@ -145,12 +145,17 @@
     background:var(--bg-lighter);transform:translateY(-3px)}
 
   .hero-wrap{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center}
+
   .avatar{
     width:240px;height:240px;border-radius:50%;
     background:linear-gradient(135deg,var(--bg-light),var(--bg-lighter));
     display:flex;align-items:center;justify-content:center;
     border:2px solid var(--accent);position:relative;
     box-shadow:0 0 60px -10px var(--text);
+  }
+  .container-avatar {
+    display: flex;
+    justify-content: center;
   }
   .avatar::before{
     content:'';position:absolute;inset:-12px;border-radius:50%;
