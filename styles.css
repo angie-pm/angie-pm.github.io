@@ -273,6 +273,9 @@
     display:flex;align-items:center;justify-content:center;
     border:2px solid var(--accent);
   }
+  .cert-medal{overflow:hidden}
+  .cert-medal a{display:block;width:100%;height:100%}
+  .cert-medal img{width:100%;height:100%;object-fit:cover;display:block}
   .cert-card h3{color:var(--white);font-size:1.05rem;margin-bottom:4px}
   .cert-card p{color:var(--text-muted);font-size:.85rem}
 
